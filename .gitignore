@@ -1,0 +1,15 @@
+# Ignore object files
+obj/*.o
+
+# Ignore executables
+bin/*
+
+# Ignore libraries
+lib/*.a
+lib/*.so
+
+# Ignore core dumps
+core
+
+# Ignore editor backup files
+*~
