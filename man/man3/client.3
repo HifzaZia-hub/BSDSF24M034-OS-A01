@@ -1,0 +1,66 @@
+.TH CLIENT 3 "2025" "Hifza Zia" "C Utilities Library"
+.SH NAME
+client \- A utility program for string and file operations
+.SH SYNOPSIS
+.B client
+.SH DESCRIPTION
+.B client
+is a demonstration program that tests the functions in the
+.B libmyutils
+library.
+
+It provides string manipulation functions:
+.RS
+.IP \(bu 2
+.BR mystrlen ()
+- Returns the length of a string.
+.IP \(bu 2
+.BR mystrcpy ()
+- Copies a string from source to destination.
+.IP \(bu 2
+.BR mystrncpy ()
+- Copies at most n characters from source to destination.
+.IP \(bu 2
+.BR mystrcat ()
+- Appends a string to the end of another.
+.RE
+
+It also provides file utility functions:
+.RS
+.IP \(bu 2
+.BR wordCount ()
+- Counts the number of lines, words, and characters in a file.
+.IP \(bu 2
+.BR mygrep ()
+- Searches for lines containing a specific string in a file.
+.RE
+
+.SH OPTIONS
+.B client
+takes no command-line options. It reads from the
+.B test.txt
+file in the current directory.
+
+.SH EXAMPLES
+The following example runs the client program:
+.PP
+.nf
+.RS
+$ ./client
+--- Testing String Functions ---
+Length of 'Hello': 5
+Copy 'Hello' to dest: 'Hello'
+Copy first 3 of 'World': 'Wor'
+Concatenated: 'Hello World'
+
+--- Testing File Functions ---
+Lines: 5, Words: 22, Chars: 116
+Found 3 lines containing 'the':
+  The quick brown fox jumps over the lazy dog.
+  This is the second line.
+  Another line with the word the.
+.RE
+.fi
+
+.SH AUTHOR
+Hifza Zia (ziahifza0@gmail.com)

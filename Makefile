@@ -17,4 +17,16 @@ obj/%.o: src/%.c
 clean:
 	rm -f obj/*.o bin/client_dynamic lib/libmyutils.so
 
-.PHONY: all clean
+install: $(TARGET)
+	install -d /usr/local/bin
+	install -m 755 $(TARGET) /usr/local/bin/client
+	install -d /usr/local/share/man/man3
+	install -m 644 man/man3/client.3 /usr/local/share/man/man3/client.3
+	@echo "Installation complete."
+
+uninstall:
+	rm -f /usr/local/bin/client
+	rm -f /usr/local/share/man/man3/client.3
+	@echo "Uninstall complete."
+
+.PHONY: all clean install uninstall
